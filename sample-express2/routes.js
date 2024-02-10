@@ -15,7 +15,7 @@ import fetch from "node-fetch";
 // Create a route for the /hello endpoint
 const routeHello = () => "Hello World!";
 
-// Create a rout for the /api/names endpoint
+// Create a route for the /api/names endpoint
 const routeAPINames = async () => {
     // define endpoint
     const url = "https://www.usemodernfullstack.dev/api/v1/users";
