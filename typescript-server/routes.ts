@@ -21,6 +21,7 @@ const routeAPINames = async (): Promise<string> => {
         return "Error";
     }
 
+    // Parse the data after retrieving it and converting it to JSON
     const names = data
         .map((item) => `id: ${item.id}, name: ${item.name}`)
         .join("<br>");
