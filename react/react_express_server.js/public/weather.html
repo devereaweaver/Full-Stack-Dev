@@ -1,0 +1,42 @@
+<!-- Beware: We're loading React and Babel in the HTMl directly only 
+for experimentation purposes only, DO NOT do this in production code.
+It's a slow process. We're also doing this to avoid the tedium of trying 
+to include React in an Express.js server, we'll use Next.js later. -->
+
+<!--This is the static file for the /public/weather.html endpoint-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Weather Component</title>
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script type="text/babel">
+            function App() {
+                // The React part, again, DO NOT do this in production code!!
+                // It's also a pain in the ass to have to type without React API support
+                const WeatherComponent = (props) => {
+                    const [count, setCount] = React.useState(0);
+                    React.useEffect(() => {setCount(1);}, []);    // Increment count when element is mounted
+                    return (
+                        <h1 onClick={() => setCount(count + 1)}>
+                            The weather is {props.weather},
+                            and the counter shows {count}
+                        </h1>
+                    );
+                };
+
+                return (<WeatherComponent weather="sunny"/>);
+            }
+
+            const container = document.getElementById("root");
+            const root = ReactDOM.createRoot(container);
+            root.render(<App />);
+        </script>
+    </body>
+</html>
