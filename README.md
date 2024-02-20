@@ -1,3 +1,3 @@
-# Complete-Developer
+# Full Stack Dev
 
-Code and notes from the book "The Complete Developer" by Martin Krause to crash course on the fundamentals and tech stack for modern full stack development. 
+Code and notes on learning tools and tech for modern full stack development.
